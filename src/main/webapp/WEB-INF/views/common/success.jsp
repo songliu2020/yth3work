@@ -4,8 +4,13 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        p{
+            color: #4cae4c;
+        }
+    </style>
 </head>
 <body>
-文件上传成功
+<p>文件上传成功</p>
 </body>
 </html>

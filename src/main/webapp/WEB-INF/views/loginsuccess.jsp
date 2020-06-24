@@ -4,8 +4,13 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        p{
+            color: #4cae4c;
+        }
+    </style>
 </head>
 <body>
-你输入的用户名：${username}
+<p>你输入的用户名：${username}</p>
 </body>
 </html>

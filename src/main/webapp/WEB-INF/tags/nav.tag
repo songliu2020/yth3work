@@ -1,7 +1,7 @@
 <%@tag pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" style="background-color: #dff0d8">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -29,12 +29,12 @@
                     </ul>
                 </li>
                 <li><a href="${ctx}/category">文章栏目管理</a></li>
-                <li><a href="${ctx}/dicta/">文章管理</a></li>
+                <li><a href="${ctx}/article">文章管理</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="${ctx}/login">登录</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">登出 <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Action</a></li>
                         <li><a href="#">Another action</a></li>

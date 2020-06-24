@@ -13,23 +13,28 @@
         <title>Document</title>
         <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrap.min.css"/>
         <script src="${ctx}/static/jquery/jquery-1.9.1.min.js"></script>
+        <style>
+            .div-bac{
+                background-color: #dff0d8;
+            }
+        </style>
     </head>
     <body>
     <div class="container">
         <tags:nav/>
-        <div class="jumbotron">
+        <div class="jumbotron div-bac">
             <h2>内容管理系统<small>（SSH框架整合实战项目）</small></h2>
             <p>一体化软件工程实践三之整合框架开发，采用Bootstrap + Spring MVC + Spring + JPA技术，实现内容管理系统</p>
             <p></p>
             <%--        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>--%>
         </div>
-
-        <ul>
+        <div class="jumbotron div-bac">
+            <ul>
 <%--            <li><a href="${ctx}/login/110312">登录页面</a></li>--%>
-            <li>MVC示例页面</li>
-            <li><a href="${ctx}/file/index"> 文件上传下载示例</a></li>
-        </ul>
-
+                <li>MVC示例页面</li>
+                <li><a href="${ctx}/file/index"> 文件上传下载示例</a></li>
+            </ul>
+        </div>
     </div>
     <script src="${ctx}/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
     </body>
