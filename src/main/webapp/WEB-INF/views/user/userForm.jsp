@@ -18,10 +18,10 @@
         <h3>用户管理${action}</h3>
     </div>
     <form method="post" action="${ctx}/dict/${action}">
-        <input type="hidden" name="id" value="${dict.id}">
-        <p>用户名称：<input type="text" class="inpu-medium" name="type" value="${dict.type}"></p>
-        <p>用户账号：<input type="text" class="input-medium" name="code" value="${dict.code}"></p>
-        <p>用户密码：<input type="text" class="input-medium" name="name" value="${dict.name}"></p>
+        <input type="hidden" name="id" value="${user.id}">
+        <p>用户名称：<input type="text" class="inpu-medium" name="name" value="${user.name}"></p>
+        <p>用户账号：<input type="text" class="input-medium" name="number" value="${user.number}"></p>
+        <p>用户密码：<input type="text" class="input-medium" name="password" value="${user.password}"></p>
         <p><button type="submit" class="btn btn-primary">保存</button></p>
     </form>
 </div>

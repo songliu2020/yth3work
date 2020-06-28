@@ -7,21 +7,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>表单页面</title>
+    <title>栏目新增</title>
     <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrap.min.css"/>
     <script src="${ctx}/static/jquery/jquery-1.9.1.min.js"></script>
 </head>
 <body>
 <div class="container">
-    <tags:nav/> <%--菜单--%>
+    <tags:nav/>
     <div class="page-header">
-        <h3>资源存储路径管理</h3>
+        <h3>栏目管理${action}</h3>
     </div>
-    <form id="createFrm" action="${ctx}/storage/create" method="post">
-        <p>文件路径：<input type="text" class="inpu-medium" name="path" value="${storage.path}"></p>
-        <p>描述：<textarea class="inpu-medium" name="description">${storage.description}</textarea></p>
-        <p>存储类型： <input type="text" class="inpu-medium" name="type" value="${storage.type}"></p>
-
+    <form method="post" action="${ctx}/dict/${action}">
+        <input type="hidden" name="id" value="${listManager.id}">
+        <p>栏目名称：<input type="text" class="input-medium" name="number" value="${listManager.name}"></p>
         <p><button type="submit" class="btn btn-primary">保存</button></p>
     </form>
 </div>

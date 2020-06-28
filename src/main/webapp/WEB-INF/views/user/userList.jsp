@@ -31,16 +31,16 @@
     <script>
         $(document).ready(function(){
             $("#btn_Create").click(function(){
-                window.location.href="${ctx}/dict/create";
+                window.location.href="${ctx}/user/create";
             }) ;
             $(".cla_delete").bind("click",function () {
                 if (confirm("确定要删除吗？")){
                     var id=$(this).attr("id");
-                    window.location.href="${ctx}/dict/delete/"+id;
+                    window.location.href="${ctx}/user/delete/"+id;
                 }
             });
             $(".cla_edit").bind("click",function () {
-                window.location.href="${ctx}/dict/update/${dict.id}";
+                window.location.href="${ctx}/user/update/${dict.id}";
             })
             $("#btn_Delete").bind("click",function () {
                 var count = $("input[name='chkIds']:checked").length;
@@ -48,7 +48,7 @@
                     alert("至少勾选一项")
                 }else{
                     if (confirm("确定要删除所选项吗？")){
-                        $("#listFrm").attr({action:"${ctx}/dict/delete", method:"POST"})
+                        $("#listFrm").attr({action:"${ctx}/user/delete", method:"POST"})
                         $("#listFrm").submit();
                     }
                 }
@@ -88,25 +88,25 @@
                     <th>用户状态</th>
                     <th>管理</th></tr></thead>
                 <tbody>
-                <c:forEach items="${dicts.content}" var="dict" varStatus="idxStatus">
+                <c:forEach items="${users.content}" var="dict" varStatus="idxStatus">
                     <tr>
-                        <td><input type="checkbox" name="chkIds" value="${dict.id}"></td>
+                        <td><input type="checkbox" name="chkIds" value="${user.id}"></td>
                         <td>${idxStatus.index+1}</td>
-                        <td>${dict.type}</td>
-                        <td>${dict.code}</td>
-                        <td>${dict.name}</td>
-                        <td>${dict.status.desc}</td>
+                        <td>${user.name}</td>
+                        <td>${user.number}</td>
+                        <td>${user.password}</td>
+                        <td>${user.status.desc}</td>
                         <td>
-                            <a href="${ctx}/dict/update/${dict.id}">编辑</a>
+                            <a href="${ctx}/dict/update/${user.id}">编辑</a>
                                 <%--                    <a href="#" class="cla_edit" id="${dict.id}">编辑</a>--%>
                             |
-                            <a href="#" class="cla_delete" id="${dict.id}">删除</a>
+                            <a href="#" class="cla_delete" id="${user.id}">删除</a>
                         </td>
                     </tr>
                 </c:forEach>
                 </tbody>
             </table>
-            <tags:pagination page="${dicts}" paginationSize="${PAGE_SIZE}"/>
+            <tags:pagination page="${users}" paginationSize="${PAGE_SIZE}"/>
         </form>
     </div>
 

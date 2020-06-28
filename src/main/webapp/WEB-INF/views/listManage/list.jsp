@@ -31,16 +31,16 @@
     <script>
         $(document).ready(function(){
             $("#btn_Create").click(function(){
-                window.location.href="${ctx}/article/create";
+                window.location.href="${ctx}/listManager/create";
             }) ;
             $(".cla_delete").bind("click",function () {
                 if (confirm("确定要删除吗？")){
                     var id=$(this).attr("id");
-                    window.location.href="${ctx}/article/delete/"+id;
+                    window.location.href="${ctx}/listManager/delete/"+id;
                 }
             });
             $(".cla_edit").bind("click",function () {
-                window.location.href="${ctx}/article/update/${dict.id}";
+                window.location.href="${ctx}/listManager/update/${dict.id}";
             })
             $("#btn_Delete").bind("click",function () {
                 var count = $("input[name='chkIds']:checked").length;
@@ -48,7 +48,7 @@
                     alert("至少勾选一项")
                 }else{
                     if (confirm("确定要删除所选项吗？")){
-                        $("#listFrm").attr({action:"${ctx}/article/delete", method:"POST"})
+                        $("#listFrm").attr({action:"${ctx}/listManager/delete", method:"POST"})
                         $("#listFrm").submit();
                     }
                 }
@@ -63,7 +63,7 @@
     <tags:nav/>
     <div class="div-border">
         <div class="page-header">
-            <h3>文章管理</h3>
+            <h3>栏目管理</h3>
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -81,32 +81,28 @@
             <table id="contentTable" class="table table-striped table-hover">
                 <thead><tr>
                     <th><input type="checkbox" id="chkAll"></th>
-                    <th>序号</th>
-                    <th>文章名称</th>
-                    <th>文章编号</th>
-                    <th>文章类型</th>
-                    <th>文章状态</th>
+                    <th>栏目号</th>
+                    <th>栏目名称</th>
+                    <th>栏目状态</th>
                     <th>管理</th></tr></thead>
                 <tbody>
-                <c:forEach items="${articles.content}" var="dict" varStatus="idxStatus">
+                <c:forEach items="${listManagers.content}" var="dict" varStatus="idxStatus">
                     <tr>
-                        <td><input type="checkbox" name="chkIds" value="${article.id}"></td>
+                        <td><input type="checkbox" name="chkIds" value="${listManager.id}"></td>
                         <td>${idxStatus.index+1}</td>
-                        <td>${article.name}</td>
-                        <td>${article.code}</td>
-                        <td>${article.type}</td>
-                        <td>${article.status.desc}</td>
+                        <td>${listManager.name}</td>
+                        <td>${listManager.status.desc}</td>
                         <td>
-                            <a href="${ctx}/dict/update/${article.id}">编辑</a>
+                            <a href="${ctx}/dict/update/${listManager.id}">编辑</a>
                                 <%--                    <a href="#" class="cla_edit" id="${dict.id}">编辑</a>--%>
                             |
-                            <a href="#" class="cla_delete" id="${article.id}">删除</a>
+                            <a href="#" class="cla_delete" id="${listManager.id}">删除</a>
                         </td>
                     </tr>
                 </c:forEach>
                 </tbody>
             </table>
-            <tags:pagination page="${articles}" paginationSize="${PAGE_SIZE}"/>
+            <tags:pagination page="${listManagers}" paginationSize="${PAGE_SIZE}"/>
         </form>
     </div>
 
